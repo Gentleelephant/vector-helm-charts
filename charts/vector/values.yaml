@@ -53,7 +53,7 @@ image:
   pullSecrets: []
   # image.tag -- The tag to use for Vector's image.
   # @default -- Derived from the Chart's appVersion.
-  tag: ""
+  tag: "0.46.0-debian"
   # image.sha -- The SHA to use for Vector's image.
   sha: ""
 
