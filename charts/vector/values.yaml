@@ -655,7 +655,7 @@ hook:
   postInstall:
     image:
       repo: kubesphere/kubectl
-      tag: v1.22.0
+      tag: v1.27.12
       pullPolicy: IfNotPresent
     backoffLimit: 1
 vectorConfig:
