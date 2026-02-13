@@ -54,7 +54,7 @@ image:
   pullSecrets: []
   # image.tag -- The tag to use for Vector's image.
   # @default -- Derived from the Chart's appVersion.
-  tag: "0.46.0-debian"
+  tag: "0.53.0-debian"
   # image.sha -- The SHA to use for Vector's image.
   sha: ""
 
@@ -659,6 +659,15 @@ hook:
       tag: v1.27.12
       pullPolicy: IfNotPresent
     backoffLimit: 1
+    # nodeSelector -- Configure a [nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector)
+    # for the post-install job Pods.
+    nodeSelector: {}
+    # hostNetwork -- Configure [hostNetwork](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#host-namespaces)
+    # for the post-install job Pods.
+    hostNetwork: false
+    # tolerations -- Configure [tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
+    # for the post-install job Pods.
+    tolerations: []
 vectorConfig:
   resources:
     requests:
@@ -669,7 +678,7 @@ vectorConfig:
       memory: 50Mi
   image:
     repo: kubesphere/vector-config
-    tag: v0.2.1
+    tag: v0.2.2
     pullPolicy: IfNotPresent
   voulumeMounts:
     name: custom-config
